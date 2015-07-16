@@ -5,13 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>La Trappe</title>
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,900' rel='stylesheet' type='text/css' />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/assets/style.css" />
   <link rel="stylesheet" type="text/css" href="/assets/shepherd-theme-arrows.css" />
 
   <script src="/assets/shepherd.js"></script>
 </head>
 <body>
+  <nav id="tagplay-nav">
+    <div class="container">
+      <a class="navbar-brand" href="https://tagplay.co"><img src="/assets/images/tagplay-logo.png" alt="Tagplay"></a>
+      <ul>
+        <li><a href="https://tagplay.co/how-it-works">How It Works</a></li>
+        <li><a href="https://tagplay.co/pricing">Pricing</a></li>
+        <li><a href="https://tagplay.co/login">Log In</a></li>
+        <li class="tagplay-signup"><a href="https://tagplay.co/register">Sign up</a></li>
+      </ul>
+    </div>
+  </nav>
   <header id="header">
     <h1>La Trappe</h1>
     <div class="container">
@@ -219,10 +230,10 @@
           text: 'Next',
           action: tour.next
         }
-      ]
+      ],
+      scrollTo: false
     });
     tour.addStep('course_today', {
-      title: 'Course of the Day',
       text: 'Update the meal of the day using Facebook, Twitter or Instagram and the hashtag #mealoftheday on your posts.',
       attachTo: '.today-text top',
       buttons: [
@@ -236,7 +247,6 @@
       ]
     });
     tour.addStep('food_menu', {
-      title: 'Menu',
       text: 'Update your menu simply by sending an email to e.g. latrappe1@m.tagplay.co with the subject #menu.',
       attachTo: '.menu-col-1 left',
       buttons: [
@@ -250,7 +260,6 @@
       ]
     });
     tour.addStep('food_pics', {
-      title: 'Images from guests',
       text: 'Gather user-generated content from Instagram through the hashtag #latrappe. Accept or decline content you want to show on your website through Tagplay.',
       attachTo: '.ugc-food bottom',
       scrollTo: false,
@@ -270,7 +279,6 @@
       ]
     });
     tour.addStep('opening_hours', {
-      title: 'Opening hours',
       text: "Update opening hours by changing them on your Facebook Page or announce it is closed today with a Facebook status or Tweet hashtagged #closedtoday.",
       attachTo: '#opening-hours .opening-hours left',
       buttons: [
@@ -284,7 +292,6 @@
       ]
     });
     tour.addStep('user_review', {
-      title: 'User Reviews',
       text: "Show customer reviews from Twitter on your website through the hashtag #latrappe. Pick which ones should appear on the site using Tagplay's moderation system.",
       attachTo: '.review-feed top',
       buttons: [
@@ -298,7 +305,6 @@
       ]
     });
     tour.addStep('news', {
-      title: 'News',
       text: 'Include a lively news section with news from your Facebook page or Twitter profile using #news on your posts.',
       attachTo: '#news .news-item bottom',
       scrollTo: false,
@@ -318,7 +324,6 @@
       ]
     });
     tour.addStep('footer', {
-      title: 'Footer',
       text: 'Update all the content in the footer by simply changing your Facebook Page information. Your website will update automatically.',
       attachTo: '#footer top',
       buttons: [

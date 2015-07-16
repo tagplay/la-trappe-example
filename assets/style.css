@@ -480,6 +480,77 @@ input:active, input:focus {
 }
 
 
+/* TAGPLAY NAV */
+
+#tagplay-nav {
+  background:#FFF;
+  color:#34495E;
+  height:60px;
+  text-align:left;
+  font-family:"Open sans", sans-serif;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.12em;
+  line-height:20px;
+  text-transform:uppercase;
+}
+
+#tagplay-nav a.navbar-brand {
+  float:left;
+  font-size:14px;
+  letter-spacing:normal;
+  padding:0;
+  height:40px;
+}
+
+#tagplay-nav ul {
+  float:right;
+  list-style-type:none;
+  margin:0;
+  padding:6px 0;
+}
+
+#tagplay-nav li {
+  float:left;
+  margin:0 0 0 24px;
+  padding:0;
+}
+
+#tagplay-nav li a {
+  display:block;
+}
+
+#tagplay-nav ul a:link, #tagplay-nav ul a:visited {
+  color:#95A5A6;
+  padding:4px 11px;
+}
+
+#tagplay-nav ul a:active, #tagplay-nav ul a:hover, #tagplay-nav ul a:focus {
+  color:#BDC3C7;
+}
+
+#tagplay-nav .tagplay-signup a:link, #tagplay-nav .tagplay-signup a:visited {
+  border:1px solid #12C4A1;
+  border-radius:2px;
+  color:#34495E;
+  padding:3px 10px;
+  transition:all 0.3s;
+  -moz-transition:all 0.3s;
+  -webkit-transition:all 0.3s;
+}
+
+#tagplay-nav .tagplay-signup a:active, #tagplay-nav .tagplay-signup a:hover, #tagplay-nav .tagplay-signup a:focus {
+  background:#12C4A1;
+  color:#FFF;
+}
+
+@media(min-width:768px) {
+  #tagplay-nav {
+    padding:10px 0;
+  }
+}
+
+
 /* HEADER */
 
 #header {
