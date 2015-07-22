@@ -503,6 +503,10 @@ input:active, input:focus {
   height:40px;
 }
 
+#tagplay-nav a.navbar-brand img {
+  height:40px;
+}
+
 #tagplay-nav .navbar-toggle {
   float:right;
   height:40px;
@@ -530,7 +534,7 @@ input:active, input:focus {
   right:0;
   z-index:1;
   margin:0;
-  padding:0;
+  padding:0 0 40px;
   background:#FFF;
   text-align:center;
 }
