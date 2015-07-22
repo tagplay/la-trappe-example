@@ -503,37 +503,63 @@ input:active, input:focus {
   height:40px;
 }
 
-#tagplay-nav ul {
+#tagplay-nav .navbar-toggle {
   float:right;
-  list-style-type:none;
+  height:40px;
+  padding:4px 5px;
+  border:0;
+  background:none;
+  outline:none;
+}
+
+#tagplay-nav .navbar-toggle .hamburger-button, #tagplay-nav .navbar-toggle:before, #tagplay-nav .navbar-toggle:after {
+  content:'';
+  display:block;
+  width:30px;
+  height:4px;
+  border-radius:2px;
+  background:#12C4A1;
+  margin:5px 0;
+}
+
+#tagplay-nav ul {
+  display:none;
+  position:absolute;
+  top:60px;
+  left:0;
+  right:0;
+  z-index:1;
   margin:0;
-  padding:6px 0;
+  padding:0;
+  background:#FFF;
+  text-align:center;
+}
+
+.nav-open header, .nav-open section, .nav-open footer, .nav-open .shepherd-element.shepherd-open {
+  display:none;
+}
+
+.nav-open #tagplay-nav ul {
+  display:block;
 }
 
 #tagplay-nav li {
-  float:left;
-  margin:0 0 0 24px;
+  margin:40px 0 0;
   padding:0;
 }
 
 #tagplay-nav li a {
-  display:block;
-}
-
-#tagplay-nav ul a:link, #tagplay-nav ul a:visited {
+  display:inline-block;
+  font-size:20px;
+  text-transform:uppercase;
+  padding:12px 21px;
   color:#95A5A6;
-  padding:4px 11px;
-}
-
-#tagplay-nav ul a:active, #tagplay-nav ul a:hover, #tagplay-nav ul a:focus {
-  color:#BDC3C7;
 }
 
 #tagplay-nav .tagplay-signup a:link, #tagplay-nav .tagplay-signup a:visited {
   border:1px solid #12C4A1;
   border-radius:2px;
   color:#34495E;
-  padding:3px 10px;
   transition:all 0.3s;
   -moz-transition:all 0.3s;
   -webkit-transition:all 0.3s;
@@ -548,6 +574,47 @@ input:active, input:focus {
   #tagplay-nav {
     padding:10px 0;
   }
+
+  .nav-open header, .nav-open section, .nav-open footer, .nav-open .shepherd-element.shepherd-open {
+    display:block;
+  }
+
+  #tagplay-nav .navbar-toggle {
+    display:none;
+  }
+
+  #tagplay-nav ul {
+    display:block;
+    position:static;
+    float:right;
+    list-style-type:none;
+    margin:0;
+    padding:6px 0;
+  }
+
+  #tagplay-nav li {
+    float:left;
+    margin:0 0 0 24px;
+    padding:0;
+  }
+
+  #tagplay-nav li a {
+    display:block;
+    font-size:12px;
+  }
+
+  #tagplay-nav ul a:link, #tagplay-nav ul a:visited {
+    color:#95A5A6;
+    padding:4px 11px;
+  }
+
+  #tagplay-nav ul a:active, #tagplay-nav ul a:hover, #tagplay-nav ul a:focus {
+    color:#BDC3C7;
+  }
+
+  #tagplay-nav .tagplay-signup a:link, #tagplay-nav .tagplay-signup a:visited {
+    padding:3px 10px;
+  }
 }
 
 
@@ -555,7 +622,7 @@ input:active, input:focus {
 
 #header {
   height:300px;
-  background-image:url('images/header-mynd-gradient.png');
+  background-image:url('images/header-mynd-gradient-small.png');
   background-size:cover;
   background-position:center center;
   position:relative;
@@ -601,6 +668,7 @@ input:active, input:focus {
 @media (min-width:768px) {
   #header {
     height:600px;
+    background-image:url('images/header-mynd-gradient.png');
   }
 
   #header h1 {

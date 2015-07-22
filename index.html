@@ -15,6 +15,7 @@
   <nav id="tagplay-nav">
     <div class="container">
       <a class="navbar-brand" href="https://tagplay.co"><img src="/assets/images/tagplay-logo.png" alt="Tagplay"></a>
+      <button class="navbar-toggle"><span class="hamburger-button"></span></button>
       <ul>
         <li><a href="https://tagplay.co/how-it-works">How It Works</a></li>
         <li><a href="https://tagplay.co/pricing">Pricing</a></li>
@@ -169,7 +170,6 @@
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
   <script>
     setTimeout(function() {
-    $(function() {
       // Simple carousel functionality
       var $newsItems = $("#news .news-item").hide();
       $newsItems.first().show();
@@ -208,8 +208,11 @@
       });
       $newsNav.append($next);
       $newsNav.appendTo("#news .container");
+    }, 2000);
+
+    $("#tagplay-nav .navbar-toggle").on('click', function() {
+      $("body").toggleClass("nav-open");
     });
-    }, 2000)
   </script>
   <script>
     var tour = new Shepherd.Tour({
