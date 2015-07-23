@@ -16,6 +16,10 @@ function news(posts, root) {
   });
 
   root.appendChild(container);
+
+  if (window.makeNewsCarousel) {
+    window.makeNewsCarousel();
+  }
 }
 
 function widget (post) {
