@@ -221,7 +221,7 @@
 
     function addTourBubble(elem, dir, text) {
       var $elem = $(elem);
-      $('<div class="tour-bubble"></div>').addClass(dir).html(text).appendTo(elem);
+      $('<div class="tour-bubble"></div>').addClass(dir).html(text).prepend('<img src="/assets/images/tagplay-logo.png" alt="" class="logo">').appendTo(elem);
       if ($elem.css("position") === 'static') {
         $elem.css("position", "relative");
       }
@@ -243,7 +243,7 @@
 
     addTourBubble('.news-feed', 'top', "Include a lively news section with news from your Facebook page or Twitter profile using #news on your posts.");
 
-    addTourBubble('#footer .container', 'top', 'Update all the content in the footer by simply changing your Facebook Page information. Your website will update automatically.<div class="tour-buttons"><a href="https://tagplay.co/register">Sign Up</a> <a href="https://tagplay.co/how-it-works">How It Works</a></div>');
+    addTourBubble('#footer .container', 'top', 'Update all the content in the footer by simply changing your Facebook Page information. Your website will update automatically.<div class="tour-buttons"><a href="https://tagplay.co/register" class="signup-button">Sign Up</a> <a href="https://tagplay.co/how-it-works">How It Works</a></div>');
 
     var $tourBubbles = $(".tour-bubble").hide();
 
