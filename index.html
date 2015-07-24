@@ -255,10 +255,14 @@
         var $parent = $(this).parent();
         var parentTop = $parent.offset().top;
         if (scrollTop + windowHeight - 50 > parentTop && scrollTop < parentTop + $parent.height()) {
-          $(this).fadeIn('fast');
+          if ($(this).is(":hidden")) {
+            $(this).fadeIn('fast');
+          }
         }
         else {
-          $(this).fadeOut('fast');
+          if ($(this).is(":visible")) {
+            $(this).fadeOut('fast');
+          }
         }
       });
     });
