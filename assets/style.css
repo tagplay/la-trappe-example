@@ -196,6 +196,227 @@ input:active, input:focus {
 }
 
 
+/* TOUR */
+
+.tour-bubble {
+  position:absolute;
+  z-index:100;
+  width:270px;
+  text-align:left;
+  margin-left:-156px;
+  background:#FFF;
+  color:#333;
+  font-size:16px;
+  line-height:23px;
+  padding:15px 20px;
+  border:1px solid #BDC3C7;
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  font-family:'Open Sans', sans-serif;
+  box-shadow:2px 2px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:2px 2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow:2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tour-bubble.top, .tour-bubble.left {
+  bottom:100%;
+  left:50%;
+  margin-bottom:20px;
+}
+
+.tour-bubble.bottom, .tour-bubble.right {
+  top:100%;
+  left:50%;
+  margin-top:20px;
+}
+
+.tour-buttons {
+  text-align:center;
+  margin-top:30px;
+}
+
+.tour-buttons a {
+  display:block;
+  background:#12C4A1;
+  color:#FFF;
+  text-transform:uppercase;
+  font-weight:600;
+  padding:11px 20px;
+  border-radius:2px;
+  font-size:14px;
+  letter-spacing:.05em;
+  margin-bottom:10px;
+}
+
+.tour-buttons a:hover, .tour-buttons a:active, .tour-buttons a:focus {
+  background:#23D5B2;
+}
+
+@media(min-width:768px) {
+  .tour-bubble {
+    width:450px;
+    margin-left:-246px;
+  }
+
+  .tour-bubble.left {
+    bottom:auto;
+    left:auto;
+    margin-left:0;
+    width:300px;
+    right:100%;
+    top:60px;
+    margin-right:20px;
+  }
+
+  .tour-bubble.right {
+    width:300px;
+    left:100%;
+    top:60px;
+    margin-left:20px;
+  }
+
+  .tour-buttons a {
+    display:inline-block;
+    min-width:120px;
+  }
+}
+
+/* Arrows */
+
+.tour-bubble.top:before, .tour-bubble.left:before {
+  content:'';
+  position:absolute;
+  bottom:-15px;
+  left:50%;
+  margin-left:-15px;
+  border-top:15px solid #BDC3C7;
+  border-left:15px solid transparent;
+  border-right:15px solid transparent;
+}
+
+.tour-bubble.top:after, .tour-bubble.left:after {
+  content:'';
+  position:absolute;
+  bottom:-14px;
+  left:50%;
+  margin-left:-14px;
+  border-top:14px solid #FFF;
+  border-left:14px solid transparent;
+  border-right:14px solid transparent;
+}
+
+.tour-bubble.bottom:before, .tour-bubble.right:before {
+  content:'';
+  position:absolute;
+  top:-15px;
+  left:50%;
+  margin-left:-15px;
+  border-bottom:15px solid #BDC3C7;
+  border-left:15px solid transparent;
+  border-right:15px solid transparent;
+}
+
+.tour-bubble.bottom:after, .tour-bubble.right:after {
+  content:'';
+  position:absolute;
+  top:-14px;
+  left:50%;
+  margin-left:-14px;
+  border-bottom:14px solid #FFF;
+  border-left:14px solid transparent;
+  border-right:14px solid transparent;
+}
+
+@media (min-width:768px) {
+  .tour-bubble.right:before {
+    left:-15px;
+    top:50%;
+    margin-left:0;
+    margin-top:-15px;
+    border-left:0;
+    border-right:15px solid #BDC3C7;
+    border-top:15px solid transparent;
+    border-bottom:15px solid transparent;
+  }
+
+  .tour-bubble.right:after {
+    left:-14px;
+    top:50%;
+    margin-left:0;
+    margin-top:-14px;
+    border-left:0;
+    border-right:14px solid #FFF;
+    border-top:14px solid transparent;
+    border-bottom:14px solid transparent;
+  }
+
+  .tour-bubble.left:before {
+    bottom:auto;
+    left:auto;
+    right:-15px;
+    top:50%;
+    margin-left:0;
+    margin-top:-15px;
+    border-right:0;
+    border-left:15px solid #BDC3C7;
+    border-top:15px solid transparent;
+    border-bottom:15px solid transparent;
+  }
+
+  .tour-bubble.left:after {
+    bottom:auto;
+    left:auto;
+    right:-14px;
+    top:50%;
+    margin-left:0;
+    margin-top:-14px;
+    border-right:0;
+    border-left:14px solid #FFF;
+    border-top:14px solid transparent;
+    border-bottom:14px solid transparent;
+  }
+}
+
+@media(min-width:992px) {
+  /* We want the menu bubble on the left on big screens */
+
+  #menu .tour-bubble {
+    bottom:auto;
+    left:-20px;
+    margin-left:0;
+    width:200px;
+    top:60px;
+  }
+
+  #menu .tour-bubble:before {
+    bottom:auto;
+    left:auto;
+    right:-15px;
+    top:50%;
+    margin-left:0;
+    margin-top:-15px;
+    border-right:0;
+    border-left:15px solid #BDC3C7;
+    border-top:15px solid transparent;
+    border-bottom:15px solid transparent;
+  }
+
+  #menu .tour-bubble:after {
+    bottom:auto;
+    left:auto;
+    right:-14px;
+    top:50%;
+    margin-left:0;
+    margin-top:-14px;
+    border-right:0;
+    border-left:14px solid #FFF;
+    border-top:14px solid transparent;
+    border-bottom:14px solid transparent;
+  }
+}
+
+
 /* SIMPLE GRID */
 
 .container {
@@ -211,7 +432,15 @@ input:active, input:focus {
 
 .row {
   margin:0 -10px;
-  overflow:hidden;
+}
+
+.row:before, .row:after {
+  content:' ';
+  display:table;
+}
+
+.row:after {
+  clear:both;
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
@@ -821,7 +1050,15 @@ input:active, input:focus {
   background-image:url('images/11.jpg');
   background-size:cover;
   background-position:center center;
-  overflow:hidden;
+}
+
+#opening-hours:before, #opening-hours:after {
+  content:' ';
+  display:table;
+}
+
+#opening-hours:after {
+  clear:both;
 }
 
 #opening-hours .box-insert {

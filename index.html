@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>La Trappe</title>
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,900' rel='stylesheet' type='text/css' />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/assets/style.css" />
-  <link rel="stylesheet" type="text/css" href="/assets/shepherd-theme-arrows.css" />
-
-  <script src="/assets/shepherd.js"></script>
 </head>
 <body>
   <nav id="tagplay-nav">
@@ -39,8 +36,10 @@
   <section id="intro">
     <div class="container">
       <div class="row">
-        <div class="col-6 offset-3 col-tablet-8 offset-tablet-2 introduction-text">
-          <!-- injected from api -->
+        <div class="col-6 offset-3 col-tablet-8 offset-tablet-2 introduction">
+          <div class="introduction-text">
+            <!-- injected from api -->
+          </div>
         </div>
       </div>
 
@@ -217,135 +216,52 @@
     $("#tagplay-nav .navbar-toggle").on('click', function() {
       $("body").toggleClass("nav-open");
     });
-  </script>
-  <script>
-    var tour = new Shepherd.Tour({
-      defaults: {
-        classes: 'shepherd-theme-arrows',
-        showCancelLink: true,
-        scrollTo: true
+
+    // TOUR
+
+    function addTourBubble(elem, dir, text) {
+      var $elem = $(elem);
+      $('<div class="tour-bubble"></div>').addClass(dir).html(text).appendTo(elem);
+      if ($elem.css("position") === 'static') {
+        $elem.css("position", "relative");
       }
-    });
-    tour.addStep('introduction', {
-      text: 'Update your website using social media. Update the description on your Facebook Page and it automatically updates on your website.',
-      attachTo: '.introduction-text bottom',
-      buttons: [
-        {
-          text: 'Skip',
-          action: tour.cancel
-        }, {
-          text: 'Next',
-          action: tour.next
-        }
-      ],
-      scrollTo: false
-    });
-    tour.addStep('course_today', {
-      text: 'Update the meal of the day using Facebook, Twitter or Instagram and the hashtag #mealoftheday on your posts.',
-      attachTo: '.today-text top',
-      buttons: [
-        {
-          text: 'Back',
-          action: tour.back
-        }, {
-          text: 'Next',
-          action: tour.next
-        }
-      ]
-    });
-    tour.addStep('food_menu', {
-      text: 'Update your menu simply by sending an email to e.g. latrappe1@m.tagplay.co with the subject #menu.',
-      attachTo: '.menu-col-1 left',
-      buttons: [
-        {
-          text: 'Back',
-          action: tour.back
-        }, {
-          text: 'Next',
-          action: tour.next
-        }
-      ]
-    });
-    tour.addStep('food_pics', {
-      text: 'Gather user-generated content from Instagram through the hashtag #latrappe. Accept or decline content you want to show on your website through Tagplay.',
-      attachTo: '.ugc-food bottom',
-      scrollTo: false,
-      when: {
-        show: function() {
-          document.getElementById('food').scrollIntoView();
-        }
-      },
-      buttons: [
-        {
-          text: 'Back',
-          action: tour.back
-        }, {
-          text: 'Next',
-          action: tour.next
-        }
-      ]
-    });
-    tour.addStep('opening_hours', {
-      text: "Update opening hours by changing them on your Facebook Page or announce it is closed today with a Facebook status or Tweet hashtagged #closedtoday.",
-      attachTo: '#opening-hours .opening-hours left',
-      buttons: [
-        {
-          text: 'Back',
-          action: tour.back
-        }, {
-          text: 'Next',
-          action: tour.next
-        }
-      ]
-    });
-    tour.addStep('user_review', {
-      text: "Show customer reviews from Twitter on your website through the hashtag #latrappe. Pick which ones should appear on the site using Tagplay's moderation system.",
-      attachTo: '.review-feed top',
-      buttons: [
-        {
-          text: 'Back',
-          action: tour.back
-        }, {
-          text: 'Next',
-          action: tour.next
-        }
-      ]
-    });
-    tour.addStep('news', {
-      text: 'Include a lively news section with news from your Facebook page or Twitter profile using #news on your posts.',
-      attachTo: '#news .news-item bottom',
-      scrollTo: false,
-      when: {
-        show: function() {
-          document.getElementById('news').scrollIntoView();
-        }
-      },
-      buttons: [
-        {
-          text: 'Back',
-          action: tour.back
-        }, {
-          text: 'Next',
-          action: tour.next
-        }
-      ]
-    });
-    tour.addStep('footer', {
-      text: 'Update all the content in the footer by simply changing your Facebook Page information. Your website will update automatically.',
-      attachTo: '#footer top',
-      buttons: [
-        {
-          text: 'Back',
-          action: tour.back
-        }, {
-          text: 'Finish',
-          action: tour.cancel
-        }
-      ]
-    });
+    }
 
-    tour.start();
+    addTourBubble('.introduction', 'top', "Update your website using social media. Update the description on your Facebook Page and it automatically updates on your website.");
 
+    addTourBubble('.today-feed', 'left', "Update the meal of the day using Facebook, Twitter or Instagram and the hashtag #mealoftheday on your posts.");
+
+    addTourBubble('.menu-feed', 'top', "Update your menu simply by sending an e-mail to e.g. latrappe1@m.tagplay.co with the subject #menu.");
+
+    addTourBubble('#map .box-insert', 'left', "If you move, just update your location on your Facebook Page and your website updates too.");
+
+    addTourBubble('#food .container', 'top', "Gather user-generated content from Instagram through the hashtag #latrappe. Accept or decline content to show on your website through Tagplay.");
+
+    addTourBubble('#opening-hours .opening-hours', 'left', "Update opening hours by changing them on your Facebook Page, or announce when it's closed with a Facebook status or tweet hashtagged #closedtoday.");
+
+    addTourBubble('#testimonials .container', 'top', "Show customer reviews from Twitter on your website through the hashtag #latrappe. Pick which ones should appear on the site using Tagplay's moderation system.");
+
+    addTourBubble('.news-feed', 'top', "Include a lively news section with news from your Facebook page or Twitter profile using #news on your posts.");
+
+    addTourBubble('#footer .container', 'top', 'Update all the content in the footer by simply changing your Facebook Page information. Your website will update automatically.<div class="tour-buttons"><a href="https://tagplay.co/register">Sign Up</a> <a href="https://tagplay.co/how-it-works">How It Works</a></div>');
+
+    var $tourBubbles = $(".tour-bubble").hide();
+
+    $(window).on('scroll', function() {
+      // Fade tour bubbles in/out as appropriate
+      var scrollTop = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      $tourBubbles.each(function() {
+        var $parent = $(this).parent();
+        var parentTop = $parent.offset().top;
+        if (scrollTop + windowHeight - 50 > parentTop && scrollTop < parentTop + $parent.height()) {
+          $(this).fadeIn('fast');
+        }
+        else {
+          $(this).fadeOut('fast');
+        }
+      });
+    });
   </script>
 </body>
 </html>
